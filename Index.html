@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Portfolio — Thực tập sinh Full-stack</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Custom vibrant theme using Tailwind utilities + a few handcrafted touches */
+      :root {
+        --accent1: #ff3d81; /* hot pink */
+        --accent2: #ffd60a; /* sunny yellow */
+        --accent3: #00e0a8; /* mint */
+        --bg1: linear-gradient(120deg, #1a1b2e 0%, #0f172a 100%);
+      }
+      .neon-text {
+        text-shadow: 0 0 8px rgba(255, 61, 129, 0.6),
+          0 0 18px rgba(0, 224, 168, 0.08);
+      }
+      .blob {
+        filter: blur(40px);
+        opacity: 0.65;
+        mix-blend-mode: screen;
+      }
+      .card-glow {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.04);
+      }
+      /* make image responsive but keep funky rounded shape */
+      .profile-shape {
+        border-radius: 28% 72% 65% 35% / 30% 40% 60% 70%;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-br from-[#0b1020] via-[#081325] to-[#0b1222] text-white min-h-screen antialiased"
+  >
+    <!-- decorative blobs -->
+    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10">
+      <svg
+        class="w-full h-full"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0%" stop-color="#ff3d81" stop-opacity="0.7" />
+            <stop offset="100%" stop-color="#ffd60a" stop-opacity="0.4" />
+          </linearGradient>
+        </defs>
+        <circle cx="10%" cy="15%" r="220" fill="url(#g1)" class="blob" />
+        <circle cx="85%" cy="20%" r="180" fill="#00e0a8" class="blob" />
+        <circle cx="70%" cy="80%" r="240" fill="#7c4dff" class="blob" />
+      </svg>
+    </div>
+
+    <header class="max-w-5xl mx-auto px-6 pt-10">
+      <nav class="flex items-center justify-between">
+        <h1 class="text-2xl font-extrabold neon-text">Portfolio cá nhân</h1>
+        <div class="space-x-3">
+          <a
+            href="#contact"
+            id="contactBtn"
+            class="px-5 py-3 rounded-full bg-gradient-to-r from-[var(--accent1)] to-[var(--accent3)] text-black font-semibold hover:opacity-90"
+          >
+            Liên hệ
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 mt-8">
+      <section class="grid md:grid-cols-3 gap-6 items-center">
+        <div
+          class="md:col-span-2 bg-gradient-to-br from-white/5 to-white/3 p-6 rounded-2xl card-glow"
+        >
+          <h2 class="text-4xl font-bold">
+            Xin chào, tôi là
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-green-300"
+              >Trần Đức Anh</span
+            >
+          </h2>
+          <p class="mt-3 text-lg text-white/80">
+            Sinh viên năm hai ngành Công nghệ thông tin — ứng tuyển vị trí
+            <strong>Thực tập sinh Lập trình viên Full-stack</strong>. Tôi tìm
+            kiếm cơ hội để học hỏi, đóng góp và phát triển trong môi trường
+            chuyên nghiệp.
+          </p>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <span class="px-3 py-1 rounded-full bg-white/5 text-sm">React</span>
+            <span class="px-3 py-1 rounded-full bg-white/5 text-sm"
+              >Node.js</span
+            >
+            <span class="px-3 py-1 rounded-full bg-white/5 text-sm"
+              >Express</span
+            >
+            <span class="px-3 py-1 rounded-full bg-white/5 text-sm">SQL</span>
+            <span class="px-3 py-1 rounded-full bg-white/5 text-sm">Git</span>
+          </div>
+
+          <div class="mt-6 flex gap-4">
+            <a
+              href="#projects"
+              class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20"
+              >Xem dự án</a
+            >
+            <a
+              href="#contact"
+              class="px-4 py-2 rounded-lg bg-gradient-to-r from-yellow-300 to-pink-400 text-black"
+              >Liên hệ</a
+            >
+          </div>
+        </div>
+
+        <aside class="flex justify-center md:justify-end">
+          <div class="w-56 h-56 relative">
+            <img
+              src="./3x4.jpg"
+              alt="ảnh đại diện"
+              class="w-full h-full object-cover profile-shape border-4 border-white/10 shadow-xl"
+            />
+          </div>
+        </aside>
+      </section>
+
+      <section id="projects" class="mt-10">
+        <h3 class="text-2xl font-semibold">Một vài dự án tham khảo</h3>
+        <!-- <p class="text-sm text-white/70 mt-1">(Link GitHub hoặc demo có thể được thêm vào khi nộp hồ sơ)</p> -->
+
+        <div class="mt-6 grid sm:grid-cols-2 gap-6">
+          <article
+            class="p-5 rounded-xl bg-gradient-to-br from-white/3 to-white/5 card-glow"
+          >
+            <h4 class="font-bold">Dự án website Clan game</h4>
+            <p class="mt-2 text-sm text-white/70">
+              React/ nodejs — Tôi đảm nhiệm full-stack website.
+            </p>
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-sm text-white/60">
+                Tech: React · Nodejs · MogoDB
+              </div>
+              <div class="flex gap-2">
+                <a
+                  class="px-3 py-1 rounded bg-white/8"
+                  href="#"
+                  onclick="openExternal('https://github.com/StephenCStudy/BX-clan')"
+                  >GitHub</a
+                >
+                <a
+                  class="px-3 py-1 rounded bg-white/8"
+                  href="#"
+                  onclick="openExternal('https://bxclan.vercel.app/')"
+                  >Demo</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="p-5 rounded-xl bg-gradient-to-br from-white/3 to-white/5 card-glow"
+          >
+            <h4 class="font-bold">Dự án website bán nhà đất</h4>
+            <p class="mt-2 text-sm text-white/70">
+              Xây dựng Frontend với React, học cách kết nối và truy vấn dữ liệu
+              bằng MogoDB.
+            </p>
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-sm text-white/60">
+                Tech: NodeJs · React · MogoDB
+              </div>
+              <div class="flex gap-2">
+                <a
+                  class="px-3 py-1 rounded bg-white/8"
+                  href="#"
+                  onclick="openExternal('https://github.com/StephenCStudy/NaturePeak-project')"
+                  >GitHub</a
+                >
+                <a
+                  class="px-3 py-1 rounded bg-white/8"
+                  href="#"
+                  onclick="openExternal('https://nature-peak.vercel.app/')"
+                  >Demo</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="mt-10">
+        <h3 class="text-2xl font-semibold">Vài nét về cách làm việc</h3>
+        <p class="mt-3 text-white/80">
+          Tôi làm việc có hệ thống, ưu tiên đọc hiểu yêu cầu trước khi code, và
+          thích chia công việc theo component/module. Trong quá trình thực tập,
+          tôi học được cách phối hợp với nhóm, tham gia review mã nguồn và cập
+          nhật thay đổi qua Git. Tôi sẵn sàng tiếp nhận feedback và cải thiện
+          nhanh chóng.
+        </p>
+      </section>
+
+      <section id="contact" class="mt-10 mb-20 bg-white/5 p-6 rounded-xl">
+        <h3 class="text-2xl font-semibold">Liên hệ</h3>
+        <p class="mt-2 text-white/80">
+          Số điện thoại: <strong id="phone">0389759625</strong>
+        </p>
+        <p class="mt-1 text-white/80">
+          Email: <strong id="email">tranducanh31032006@gmail.com</strong>
+        </p>
+        <div class="mt-4 flex items-center gap-3">
+          <button
+            id="copyPhone"
+            class="px-4 py-2 rounded bg-gradient-to-r from-pink-400 to-yellow-300 text-black"
+          >
+            Sao chép số
+          </button>
+          <button id="copyEmail" class="px-4 py-2 rounded bg-white/10">
+            Sao chép email
+          </button>
+          <button
+            id="sendEmail"
+            class="px-4 py-2 rounded bg-gradient-to-r from-green-300 to-blue-400 text-black"
+          >
+            Gửi email
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="text-center pb-10 text-white/60">
+      <small
+        >Portfolio cá nhân — trang html dành cho hồ sơ thực tập. Thiết kế màu
+        sắc cá tính, sặc sỡ</small
+      >
+    </footer>
+
+    <!-- Modal xác nhận -->
+    <div
+      id="confirmModal"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/70"
+    >
+      <div
+        class="bg-gradient-to-br from-[#1a1b2e] to-[#0f172a] p-6 rounded-2xl card-glow max-w-md mx-4 border-2 border-white/10"
+      >
+        <h4
+          id="modalTitle"
+          class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-green-300"
+        ></h4>
+        <p id="modalMessage" class="mt-3 text-white/80"></p>
+        <div class="mt-6 flex justify-end gap-3">
+          <button
+            id="modalClose"
+            class="px-5 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition"
+          >
+            OK
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Small JS interactivity
+      function openExternal(url) {
+        window.open(url, "_blank");
+      }
+
+      // Hàm hiển thị modal xác nhận
+      function showModal(title, message) {
+        document.getElementById("modalTitle").innerText = title;
+        document.getElementById("modalMessage").innerText = message;
+        document.getElementById("confirmModal").classList.remove("hidden");
+      }
+
+      // Đóng modal
+      document.getElementById("modalClose").addEventListener("click", () => {
+        document.getElementById("confirmModal").classList.add("hidden");
+      });
+
+      // Đóng modal khi click vào nền
+      document.getElementById("confirmModal").addEventListener("click", (e) => {
+        if (e.target.id === "confirmModal") {
+          document.getElementById("confirmModal").classList.add("hidden");
+        }
+      });
+
+      document
+        .getElementById("copyPhone")
+        .addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(
+              document.getElementById("phone").innerText
+            );
+            showModal(
+              "Thành công!",
+              "Số điện thoại đã được sao chép vào clipboard."
+            );
+          } catch (e) {
+            prompt("Sao chép số:", document.getElementById("phone").innerText);
+          }
+        });
+
+      document
+        .getElementById("copyEmail")
+        .addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(
+              document.getElementById("email").innerText
+            );
+            showModal("Thành công!", "Email đã được sao chép vào clipboard.");
+          } catch (e) {
+            prompt(
+              "Sao chép email:",
+              document.getElementById("email").innerText
+            );
+          }
+        });
+
+      // Theme toggle: switch gradient accents
+      const themeBtn = document.getElementById("themeBtn");
+      let themeIdx = 0;
+      const themes = [
+        { a: "#ff3d81", b: "#00e0a8" },
+        { a: "#7c4dff", b: "#ffd60a" },
+        { a: "#00c2ff", b: "#ff7b7b" },
+      ];
+      themeBtn.addEventListener("click", () => {
+        themeIdx = (themeIdx + 1) % themes.length;
+        document.documentElement.style.setProperty(
+          "--accent1",
+          themes[themeIdx].a
+        );
+        document.documentElement.style.setProperty(
+          "--accent3",
+          themes[themeIdx].b
+        );
+      });
+
+      // Gửi email
+      document.getElementById("sendEmail").addEventListener("click", () => {
+        const email = document.getElementById("email").innerText;
+        showModal(
+          "Mở ứng dụng email",
+          "Đang chuyển hướng đến ứng dụng email của bạn..."
+        );
+        setTimeout(() => {
+          window.location.href = "mailto:" + email;
+        }, 1000);
+      });
+
+      // Contact button quick scroll
+      document.getElementById("contactBtn").addEventListener("click", () => {
+        document
+          .getElementById("contact")
+          .scrollIntoView({ behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>
